@@ -34,7 +34,7 @@ function Sidebar({
             <Network size={18} color="#fff" />
           </div>
           <div>
-            <div className="brand-name">Multi-Agent Framework</div>
+            <div className="brand-name">AI Platform Local LLM</div>
             <div className="brand-sub">Local LLM Orchestration</div>
           </div>
         </div>
@@ -92,7 +92,7 @@ function Sidebar({
 function AgentChips() {
   return (
     <div className="topbar-chips" aria-label="Active agents">
-      {['Orchestrator', 'AI Agent 1', 'RAG Agent'].map((name) => (
+      {['Orchestrator', 'AI Agent', 'RAG Agent'].map((name) => (
         <div key={name} className="agent-chip">
           <span className="dot" aria-hidden="true" /> {name}
         </div>
@@ -204,10 +204,9 @@ function WelcomeScreen({ onPrompt }: WelcomeScreenProps) {
       <div className="welcome-glow" aria-hidden="true">
         <Network size={36} color="#fff" />
       </div>
-      <h1 className="welcome-title">Multi-Agent Framework</h1>
+      <h1 className="welcome-title">AI Platform Local LLM</h1>
       <p className="welcome-sub">
-        A local LLM orchestration platform powered by AI Agents, RAG, and MCP tool integrations.
-        Ask anything — the Orchestrator routes your request to the best agent.
+        A local LLM Orchestration Platform.
       </p>
       <div className="welcome-pills" role="list" aria-label="Suggested prompts">
         {STARTERS.map((s) => (
@@ -547,7 +546,7 @@ export default function App() {
       <div className="main-area">
         <header className="topbar">
           <h1 className="topbar-title">
-            {activeSessionId ? 'Conversation' : 'Multi-Agent Chat'}
+            {activeSessionId ? 'Conversation' : 'AI Platform Chat'}
           </h1>
           <AgentChips />
         </header>

@@ -8,20 +8,20 @@
   color-scheme: dark;
 
   /* Brand */
-  --accent:       hsl(210 100% 60%);
+  --accent:       hsl(186, 83%, 23%);
   --accent-glow:  hsl(210 100% 60% / 0.25);
-  --accent-dim:   hsl(210 80% 45%);
+  --accent-dim:   hsl(187, 42%, 42%);
   --success:      hsl(150 80% 50%);
   --warning:      hsl(38 95% 60%);
   --danger:       hsl(0 80% 60%);
 
   /* Surfaces */
-  --bg-base:      hsl(220 20% 6%);
-  --bg-raised:    hsl(220 18% 10%);
-  --bg-overlay:   hsl(220 16% 14%);
-  --glass:        hsl(220 20% 100% / 0.05);
-  --glass-border: hsl(220 20% 100% / 0.09);
-  --glass-hover:  hsl(220 20% 100% / 0.08);
+  --bg-base:      hsla(180, 6%, 90%, 0.992);
+  --bg-raised:    hsl(145, 25%, 55%);
+  --bg-overlay:   hsl(180, 30%, 96%);
+  --glass:        hsla(180, 80%, 6%, 0.992);
+  --glass-border: hsla(180, 13%, 92%, 0.647);
+  --glass-hover:  hsla(180, 33%, 80%, 0.958);
 
   /* Text */
   --text-primary:   hsl(220 15% 95%);
