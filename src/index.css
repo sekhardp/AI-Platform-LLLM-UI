@@ -10,21 +10,21 @@
   /* Brand */
   --accent:       hsl(186, 83%, 23%);
   --accent-glow:  hsl(210 100% 60% / 0.25);
-  --accent-dim:   hsl(187, 42%, 42%);
+  --accent-dim:   hsl(185, 77%, 27%);
   --success:      hsl(150 80% 50%);
   --warning:      hsl(38 95% 60%);
   --danger:       hsl(0 80% 60%);
 
   /* Surfaces */
-  --bg-base:      hsla(180, 6%, 90%, 0.992);
+  --bg-base:      #FFFFF3;
   --bg-raised:    hsl(145, 25%, 55%);
   --bg-overlay:   hsl(180, 30%, 96%);
-  --glass:        hsla(180, 80%, 6%, 0.992);
-  --glass-border: hsla(180, 13%, 92%, 0.647);
+  --glass:        hsla(180, 88%, 3%, 0.992);
+  --glass-border: #faf9f4;
   --glass-hover:  hsla(180, 33%, 80%, 0.958);
 
   /* Text */
-  --text-primary:   hsl(220 15% 95%);
+  --text-primary:   hsl(211, 17%, 26%);
   --text-secondary: hsl(220 10% 65%);
   --text-muted:     hsl(220 8% 45%);
 
@@ -41,7 +41,7 @@
   --shadow-glow: 0 0 30px var(--accent-glow);
 
   /* Sidebar */
-  --sidebar-w: 280px;
+  --sidebar-w: 220px;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -151,7 +151,7 @@ body::before {
 }
 
 .new-chat-btn:hover {
-  background: hsl(210 100% 65%);
+  background: hsl(187, 61%, 39%);
   transform: translateY(-1px);
   box-shadow: 0 6px 20px var(--accent-glow);
 }
@@ -433,12 +433,12 @@ body::before {
 
 .message-avatar.user-avatar {
   background: linear-gradient(135deg, var(--accent-dim), var(--accent));
-  color: #fff;
+  color: #fcfafa;
 }
 
 .message-avatar.ai-avatar {
   background: linear-gradient(135deg, hsl(260 70% 40%), hsl(260 80% 55%));
-  color: #fff;
+  color: #fcfafa;
 }
 
 .message-content {
@@ -607,7 +607,7 @@ body::before {
 }
 
 .send-btn:hover:not(:disabled) {
-  background: hsl(210 100% 65%);
+  background: hsl(187, 61%, 39%);
   transform: scale(1.05);
 }
 
@@ -681,7 +681,7 @@ body::before {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 .panel {
-  background: var(--bg-raised);
+  background: #c2c2bf;
   border: 1px solid var(--glass-border);
   border-radius: var(--r-xl);
   padding: 28px;
@@ -739,8 +739,8 @@ body::before {
 }
 
 .drop-zone:hover, .drop-zone.drag-over {
-  border-color: var(--accent);
-  background: var(--accent-glow);
+  border-color: #FFFFF3;
+  background: #FFFFF3;
 }
 
 .drop-zone-icon { color: var(--text-muted); }
@@ -756,7 +756,7 @@ body::before {
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  background: var(--glass);
+  background: #FFFFF3;
   border: 1px solid var(--glass-border);
   border-radius: var(--r-md);
 }
@@ -768,7 +768,7 @@ body::before {
 .upload-progress {
   width: 80px;
   height: 4px;
-  background: var(--glass-border);
+  background: #cece75;
   border-radius: var(--r-full);
   overflow: hidden;
 }
@@ -785,7 +785,7 @@ body::before {
   margin-top: 16px;
   width: 100%;
   padding: 12px;
-  background: var(--accent);
+  background: #656563;
   color: #fff;
   border: none;
   border-radius: var(--r-md);
@@ -797,7 +797,7 @@ body::before {
   box-shadow: 0 4px 14px var(--accent-glow);
 }
 
-.upload-submit-btn:hover { background: hsl(210 100% 65%); transform: translateY(-1px); }
+.upload-submit-btn:hover { background: #9a9a68; transform: translateY(-1px); }
 .upload-submit-btn:disabled { background: var(--glass); color: var(--text-muted); cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* 12. Agents panel */
