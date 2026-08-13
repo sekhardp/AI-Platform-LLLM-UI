@@ -147,13 +147,13 @@ body::before {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 14px var(--accent-glow);
+  box-shadow: 0 2px 2px var(--accent-dim);
 }
 
 .new-chat-btn:hover {
   background: hsl(187, 61%, 39%);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px var(--accent-glow);
+  box-shadow: 0 2px 2px var(--accent-dim);
 }
 
 .new-chat-btn:active { transform: translateY(0); }
@@ -708,13 +708,13 @@ body::before {
 .panel-title {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #133e42;
 }
 
 .panel-close-btn {
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: #133e42;
   cursor: pointer;
   padding: 4px;
   border-radius: var(--r-sm);
@@ -743,13 +743,13 @@ body::before {
   background: #FFFFF3;
 }
 
-.drop-zone-icon { color: var(--text-muted); }
-.drop-zone h3 { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
-.drop-zone p { font-size: 0.8rem; color: var(--text-muted); }
+.drop-zone-icon { color: #509da3; }
+.drop-zone h3 { font-size: 0.9rem; font-weight: 600; color: #133e42; }
+.drop-zone p { font-size: 0.8rem; color: #282c2c; }
 
 .file-input-hidden { display: none; }
 
-.upload-file-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.upload-file-list { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
 
 .upload-file-item {
   display: flex;
@@ -762,8 +762,8 @@ body::before {
 }
 
 .upload-file-info { flex: 1; min-width: 0; }
-.upload-file-name { font-size: 0.8rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.upload-file-size { font-size: 0.7rem; color: var(--text-muted); }
+.upload-file-name { font-size: 0.8rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #133e42; }
+.upload-file-size { font-size: 0.7rem; color: #364748; }
 
 .upload-progress {
   width: 80px;
@@ -797,7 +797,7 @@ body::before {
   box-shadow: 0 4px 14px var(--accent-glow);
 }
 
-.upload-submit-btn:hover { background: #9a9a68; transform: translateY(-1px); }
+.upload-submit-btn:hover { background: #095554; transform: translateY(-1px); }
 .upload-submit-btn:disabled { background: var(--glass); color: var(--text-muted); cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* 12. Agents panel */
