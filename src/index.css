@@ -19,14 +19,14 @@
   --bg-base:      #FFFFF3;
   --bg-raised:    hsl(145, 25%, 55%);
   --bg-overlay:   hsl(180, 30%, 96%);
-  --glass:        hsla(180, 88%, 3%, 0.992);
+  --glass:        #133e42;
   --glass-border: #faf9f4;
   --glass-hover:  hsla(180, 33%, 80%, 0.958);
 
   /* Text */
-  --text-primary:   hsl(211, 17%, 26%);
-  --text-secondary: hsl(220 10% 65%);
-  --text-muted:     hsl(220 8% 45%);
+  --text-primary:   hsl(188, 93%, 84%);
+  --text-secondary: hsl(220, 6%, 72%);
+  --text-muted:     hsl(221, 22%, 85%);
 
   /* Radius */
   --r-sm:   6px;
@@ -103,14 +103,14 @@ body::before {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .brand-icon {
   width: 36px;
   height: 36px;
   border-radius: var(--r-md);
-  background: linear-gradient(135deg, var(--accent), hsl(260 80% 65%));
+  background: linear-gradient(135deg, var(--accent), hsl(36, 62%, 42%));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +120,7 @@ body::before {
 
 .brand-name {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-primary);
   line-height: 1.2;
 }
@@ -128,7 +128,7 @@ body::before {
 .brand-sub {
   font-size: 0.68rem;
   color: var(--text-muted);
-  font-weight: 400;
+  font-weight: 250;
 }
 
 .new-chat-btn {
@@ -147,7 +147,7 @@ body::before {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 14px var(--accent-glow);
+  #box-shadow: 0 4px 14px var(--accent-glow);
 }
 
 .new-chat-btn:hover {
@@ -276,7 +276,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
+  padding: 6px 24px;
   border-bottom: 1px solid var(--glass-border);
   background: var(--glass);
   backdrop-filter: blur(20px);
@@ -314,7 +314,7 @@ body::before {
   border-radius: 50%;
   background: var(--success);
   box-shadow: 0 0 6px var(--success);
-  animation: pulse 2s infinite;
+  animation: pulse 5s infinite;
 }
 
 @keyframes pulse {
@@ -351,11 +351,11 @@ body::before {
   width: 80px;
   height: 80px;
   border-radius: var(--r-xl);
-  background: linear-gradient(135deg, var(--accent), hsl(260 80% 65%));
+  background: linear-gradient(135deg, var(--accent), hsl(35, 54%, 55%));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 50px var(--accent-glow), 0 0 100px hsl(260 80% 65% / 0.15);
+  box-shadow: 0 0 50px var(--accent-glow), 0 0 100px hsla(39, 71%, 36%, 0.15);
   animation: float 4s ease-in-out infinite;
 }
 
@@ -367,7 +367,7 @@ body::before {
 .welcome-title {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg in oklch, var(--accent), hsl(260 80% 75%));
+  background: linear-gradient(135deg in oklch, var(--accent), hsl(43, 76%, 39%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -536,10 +536,10 @@ body::before {
 
 /* 9. Input area */
 .input-area {
-  padding: 16px 24px 20px;
+  padding: 6px 20px 6px;
   border-top: 1px solid var(--glass-border);
   background: var(--glass);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(20px);
   flex-shrink: 0;
 }
@@ -551,13 +551,13 @@ body::before {
   background: var(--bg-overlay);
   border: 1px solid var(--glass-border);
   border-radius: var(--r-xl);
-  padding: 10px 14px;
+  padding: 10px 10px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input-wrapper:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  box-shadow: 0 0 0 1px var(--accent-glow);
 }
 
 .upload-btn {
@@ -579,9 +579,9 @@ body::before {
   background: none;
   border: none;
   outline: none;
-  color: var(--text-primary);
+  color: #111313;
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   resize: none;
   line-height: 1.6;
   max-height: 160px;
