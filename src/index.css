@@ -147,7 +147,7 @@ body::before {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  #box-shadow: 0 4px 14px var(--accent-glow);
+  box-shadow: 0 4px 14px var(--accent-glow);
 }
 
 .new-chat-btn:hover {
