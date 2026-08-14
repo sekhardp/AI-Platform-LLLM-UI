@@ -2,12 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: multi-agent-framework-ui
-  # TODO: Change namespace to match your target (e.g. production, staging)
-  namespace: default
+  namespace: multi-agent
   labels:
     app: multi-agent-framework-ui
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: multi-agent-framework-ui
@@ -16,24 +15,17 @@ spec:
       labels:
         app: multi-agent-framework-ui
     spec:
-      # TODO: If your ghcr.io packages are private, create a pull secret:
-      #   kubectl create secret docker-registry ghcr-secret \
-      #     --docker-server=ghcr.io \
-      #     --docker-username=<your-github-username> \
-      #     --docker-password=<your-github-pat> \
-      #     --namespace=default
-      # Then uncomment the block below:
-      # imagePullSecrets:
-      #   - name: ghcr-secret
-
       containers:
         - name: multi-agent-framework-ui
-          # TODO: Replace <your-github-username> with your GitHub username or org
-          image: ghcr.io/<your-github-username>/multi-agent-framework-ui:latest
-          imagePullPolicy: Always
+          image: multi-agent-framework-ui:latest
+          # Never pull — use the locally-built image available to Rancher Desktop k3s
+          imagePullPolicy: Never
           ports:
             - containerPort: 80
               protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: multi-agent-framework-ui-config
           resources:
             requests:
               cpu: "100m"

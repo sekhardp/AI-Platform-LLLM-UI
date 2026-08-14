@@ -1,4 +1,8 @@
-const BASE = 'http://localhost:8001';
+import { getConfig } from './config';
+
+/** Resolves the backend base URL at call-time from the runtime config. */
+const getBase = () => getConfig().apiBaseUrl;
+
 
 
 export async function streamChat(
@@ -8,7 +12,7 @@ export async function streamChat(
   onDone: (sid: string) => void
 ) {
   const params = new URLSearchParams({ prompt, session_id: sessionId });
-  const res = await fetch(`${BASE}/chat/stream?${params}`);
+  const res = await fetch(`${getBase()}/chat/stream?${params}`);
   if (!res.body) throw new Error('No response body');
 
   const reader = res.body.getReader();
@@ -38,7 +42,7 @@ export async function streamChat(
 }
 
 export async function sendFeedback(sessionId: string, rating: 1 | -1, comment?: string) {
-  await fetch(`${BASE}/feedback`, {
+  await fetch(`${getBase()}/feedback`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ session_id: sessionId, rating, comment }),
@@ -46,23 +50,23 @@ export async function sendFeedback(sessionId: string, rating: 1 | -1, comment?: 
 }
 
 export async function fetchSessions() {
-  const res = await fetch(`${BASE}/history`);
+  const res = await fetch(`${getBase()}/history`);
   const data = await res.json();
   return data.sessions as Array<{ session_id: string; message_count: number; last_message: string; created_at: string }>;
 }
 
 export async function fetchSession(sessionId: string) {
-  const res = await fetch(`${BASE}/history/${sessionId}`);
+  const res = await fetch(`${getBase()}/history/${sessionId}`);
   const data = await res.json();
   return data.messages as Array<{ role: string; content: string; timestamp: string }>;
 }
 
 export async function deleteSession(sessionId: string) {
-  await fetch(`${BASE}/history/${sessionId}`, { method: 'DELETE' });
+  await fetch(`${getBase()}/history/${sessionId}`, { method: 'DELETE' });
 }
 
 export async function fetchAgents() {
-  const res = await fetch(`${BASE}/agents`);
+  const res = await fetch(`${getBase()}/agents`);
   const data = await res.json();
   return data.agents;
 }
@@ -88,7 +92,7 @@ export async function uploadFile(file: File, onProgress: (pct: number) => void):
     };
 
     xhr.onerror = () => reject(new Error('Network error'));
-    xhr.open('POST', `${BASE}/upload`);
+    xhr.open('POST', `${getBase()}/upload`);
     xhr.send(fd);
   });
 }

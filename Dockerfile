@@ -29,6 +29,11 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy built assets from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+# Copy and enable the entrypoint that writes config.json from env vars
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+# docker-entrypoint.sh writes /config.json from env vars, then starts nginx
+ENTRYPOINT ["/docker-entrypoint.sh"]
