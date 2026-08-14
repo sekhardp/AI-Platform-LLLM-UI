@@ -2,16 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: multi-agent-framework-ui
-  # TODO: Change namespace to match your target (e.g. production, staging)
-  namespace: default
+  namespace: multi-agent
   labels:
     app: multi-agent-framework-ui
 spec:
-  type: LoadBalancer
   selector:
     app: multi-agent-framework-ui
   ports:
     - name: http
-      protocol: TCP
       port: 80
       targetPort: 80
+      protocol: TCP
+  type: ClusterIP
