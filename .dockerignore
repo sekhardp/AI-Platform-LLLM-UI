@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+
+# Build output (rebuilt inside Docker)
+dist
+dist-ssr
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Editor/IDE
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Local env files
+*.local
+
+# Docker files themselves
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# CI/CD
+.github
+
+# Kubernetes
+k8s/
